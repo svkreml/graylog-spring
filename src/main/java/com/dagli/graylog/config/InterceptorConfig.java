@@ -1,3 +1,4 @@
+/*
 package com.dagli.graylog.config;
 
 import com.dagli.graylog.interceptor.LogInterceptor;
@@ -17,3 +18,4 @@ public class InterceptorConfig implements WebMvcConfigurer {
     registry.addInterceptor(logInterceptor).addPathPatterns("/**");
   }
 }
+*/

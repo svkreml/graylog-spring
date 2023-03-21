@@ -1,3 +1,4 @@
+/*
 package com.dagli.graylog.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,3 +25,4 @@ public class LogInterceptor implements HandlerInterceptor {
     HandlerInterceptor.super.afterCompletion(request, response, handler, ex);
   }
 }
+*/
