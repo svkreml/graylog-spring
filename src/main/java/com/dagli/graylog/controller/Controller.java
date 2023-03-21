@@ -14,4 +14,10 @@ public class Controller {
     return "Welcome to Graylog";
   }
 
+  @GetMapping("/welcome-no-log")
+  public String controllerStatus2() {
+    //log.info("Welcome to Graylog with Dagli");
+    return "Welcome to Graylog";
+  }
+
 }
