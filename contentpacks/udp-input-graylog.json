@@ -1,0 +1,65 @@
+{
+  "v": 1,
+  "id": "db4eaff5-bc01-49e6-be63-41f7c681819d",
+  "rev": 1,
+  "name": "test",
+  "summary": "test",
+  "description": "",
+  "vendor": "test",
+  "url": "",
+  "parameters": [],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "input",
+        "version": "1"
+      },
+      "id": "e274e89c-035a-4d28-900b-96b815fcf3c8",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "test"
+        },
+        "configuration": {
+          "recv_buffer_size": {
+            "@type": "integer",
+            "@value": 262144
+          },
+          "port": {
+            "@type": "integer",
+            "@value": 12201
+          },
+          "bind_address": {
+            "@type": "string",
+            "@value": "0.0.0.0"
+          },
+          "decompress_size_limit": {
+            "@type": "integer",
+            "@value": 8388608
+          },
+          "number_worker_threads": {
+            "@type": "integer",
+            "@value": 36
+          }
+        },
+        "static_fields": {},
+        "type": {
+          "@type": "string",
+          "@value": "org.graylog2.inputs.gelf.udp.GELFUDPInput"
+        },
+        "global": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "extractors": []
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.2.13+9c90b93"
+        }
+      ]
+    }
+  ]
+}

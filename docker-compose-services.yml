@@ -9,6 +9,7 @@ services:
     mem_reservation: 2g
     volumes:
       - graylog:/usr/share/graylog/data
+      - ./contentpacks:/usr/share/graylog/data/contentpacks
     ports:
       # Graylog web interface and REST API
       - "9000:9000"
@@ -27,6 +28,9 @@ services:
       - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
       - GRAYLOG_HTTP_EXTERNAL_URI=http://127.0.0.1:9000/
       - GRAYLOG_MONGODB_URI=mongodb://root:example@mongo:27017/graylogdb?authSource=admin
+      - GRAYLOG_CONTENT_PACKS_AUTO_INSTALL=udp-input-graylog.json
+      - GRAYLOG_CONTENT_PACKS_DIR=/usr/share/graylog/data/contentpacks
+      - GRAYLOG_CONTENT_PACKS_LOADER_ENABLED=true
     depends_on:
       - mongo
       - elasticsearch

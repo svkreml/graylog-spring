@@ -11,6 +11,9 @@ services:
     volumes:
       - es_data:/usr/share/elasticsearch/data
     environment:
+      - GRAYLOG_CONTENT_PACKS_AUTO_INSTALL=udp-input-graylog.json
+      - GRAYLOG_CONTENT_PACKS_DIR=data/contentpacks
+      - GRAYLOG_CONTENT_PACKS_LOADER_ENABLED=true
       - http.host=0.0.0.0
       - transport.host=localhost
       - network.host=0.0.0.0
@@ -25,12 +28,16 @@ services:
     image: graylog/graylog:4.2
     volumes:
       - graylog_journal:/usr/share/graylog/data/journal
+      - ./contentpacks:/usr/share/graylog/data/contentpacks
     environment:
       # CHANGE ME (must be at least 16 characters)!
       - GRAYLOG_PASSWORD_SECRET=daglisecret12345
       # Password: admin
       - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
       - GRAYLOG_HTTP_EXTERNAL_URI=http://127.0.0.1:9000/
+      - GRAYLOG_CONTENT_PACKS_AUTO_INSTALL=udp-input-graylog.json
+      - GRAYLOG_CONTENT_PACKS_DIR=/usr/share/graylog/data/contentpacks
+      - GRAYLOG_CONTENT_PACKS_LOADER_ENABLED=true
     links:
       - mongodb:mongo
       - elasticsearch
