@@ -28,7 +28,7 @@ services:
     image: graylog/graylog:4.2
     volumes:
       - graylog_journal:/usr/share/graylog/data/journal
-      - ./contentpacks:/usr/share/graylog/data/contentpacks
+      - ./graylog/contentpacks:/usr/share/graylog/data/contentpacks
     environment:
       # CHANGE ME (must be at least 16 characters)!
       - GRAYLOG_PASSWORD_SECRET=daglisecret12345

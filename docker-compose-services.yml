@@ -9,7 +9,7 @@ services:
     mem_reservation: 2g
     volumes:
       - graylog:/usr/share/graylog/data
-      - ./contentpacks:/usr/share/graylog/data/contentpacks
+      - ./graylog/contentpacks:/usr/share/graylog/data/contentpacks
     ports:
       # Graylog web interface and REST API
       - "9000:9000"
